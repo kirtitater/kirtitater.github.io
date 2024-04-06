@@ -1,193 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,700,700i">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bree+Serif">
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            padding: 100px;
-            background: #efefef;
-            font-family: 'Source Sans Pro', sans-serif;
-            color: #333;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kirti Tater</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    background-color: rgba(71,92,102,1);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+  }
+  
+  .navbar {
+    overflow: hidden;
+    background-color: #f1f1f1;
+  }
+  .navbar a {
+    float: right;
+    display: block;
+    color: #333;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .navbar a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  .content {
+    padding: 20px;
+    margin-top: 40px; /* Added margin-top to create space between content and navbar */
+  }
+  .profile-image {
+    display: block; /* Ensures the image is treated as a block element */
+    margin: 40px auto 20px; /* Centers the image horizontally and adds some margin below */
+    width: 40%; /* Adjust the width of the image as needed */
+}
 
-        @media (min-width: 600px) {
-            body {
-                padding: 100px 100px;
-            }
-        }
-
-        h1 {
-            margin: 0;
-            font-family: 'Bree Serif', serif;
-            font-size: 36px;
-        }
-
-        h2 {
-            margin: 0;
-            font-family: 'Bree Serif', serif;
-            font-size: 25px;
-        }
-
-        h2 {
-            margin: 0;
-            font-family: 'Bree Serif', serif;
-            font-size: 22px;
-        }
-
-        p {
-            margin-top: 20px;
-            margin-bottom: 0;
-            padding: 0;
-            font-size: 20px;
-            line-height: 1.5;
-        }
-
-        .tabs {
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 800px;
-            background: #fff;
-            box-shadow: 0 48px 80px -32px rgba(0, 0, 0, 0.3);
-        }
-
-        .input {
-            position: absolute;
-            opacity: 0;
-        }
-
-        .label {
-            width: 160px;
-            padding: 25px 68.45px;
-            background: #fff;
-            cursor: pointer;
-            font-weight: bold;
-            font-size: 18px;
-            color: #7f7f7f;
-            transition: background 0.1s, color 0.1s;
-        }
-
-        .label:hover {
-            background: #d8d8d8;
-        }
-
-        .label:active {
-            background: #fff;
-        }
-
-        .input:focus+.label {
-            z-index: 1;
-        }
-
-        .input:checked+.label {
-            background: #e5e5e5;
-            color: #000;
-        }
-
-        @media (min-width: 600px) {
-            .label {
-                width: auto;
-            }
-        }
-
-        .panel {
-            display: none;
-            padding: 20px 30px 30px;
-            background: #fff;
-        }
-
-        @media (min-width: 600px) {
-            .panel {
-                order: 99;
-            }
-        }
-
-        .input:checked+.label+.panel {
-            display: block;
-        }
-
-        .header-image-container {
-            max-width: 250px; /* Adjust width as needed */
-            text-align: center;
-        }
-        .header-image {
-            text-align: center;
-            margin-bottom: 50px;
-            max-width: 100%;
-            margin-left: 275px;
-            height: auto;
-        }
-
-        .name-container {
-            position: absolute;
-            top: 25px;
-            /* Adjust top position */
-            left: 45px;
-            /* Adjust left position */
-        }
-    </style>
+</style>
 </head>
-
 <body>
 
-    <div class="container">
-        <div class="header-image-container">
-            <img class="header-image" src="img.jpeg" alt="Your Image">
-        </div>
-        <div class="container">
-            <div class="name-container">
-                <h1>Kirti Tater</h1>
-            </div>
-            </header>
-            <div class="tabs">
-                <input class="input" name="tabs" type="radio" id="tab-1" checked="checked" />
-                <label class="label" for="tab-1">Home Page</label>
-                <div class="panel">
-                    <p>I am a Doctoral Candidate in the Economics Department of <a href="https://snu.edu.in/home/">Shiv
-                            Nadar Institution of Eminence. </a>
-                        <br>
-                        My research interests include Economics of Gender, Labor Economics, Health Economics, and
-                        Development Economics. You can reach me at kt473@snu.edu.in
-                    </p>
-                </div>
-                <input class="input" name="tabs" type="radio" id="tab-2" />
-                <label class="label" for="tab-2">CV</label>
-                <div class="panel">
-                    <a href="https://snuncr-my.sharepoint.com/:b:/g/personal/kt473_snu_edu_in/EbJGRU31dbdGoSPEr6Wk-WIBJqEVUXG6dY3OvDGcTus3Ug?e=S6TisS"><h2> Curriculum
-                            Vitae</h2></a>
-                        </p>
-                </div>
-                <input class="input" name="tabs" type="radio" id="tab-3" />
-                <label class="label" for="tab-3">Research</label>
-                <div class="panel">
-                    <p> <h3>Publication(s) </h3>
-                        “Gender Peer Effects in High Schools: Evidence from India,” (with Prerna Dewan, Tridip Ray and
-                        Arka Roy Chaudhuri); Journal of Economic Behavior and Organization; Vol. 220, 2024, p.470-494.
-                        <a href="https://doi.org/10.1016/j.jebo.2024.02.002">(link)</a>
-                    </p>
-                    <h3>Work in Progress</h3>
-                    “Weaving Well-being: The Changing Landscape of Female Job Opportunities and Child Survival in
-                    Bangladesh” (with Shampa Bhattacharjee and Arka Roy Chaudhuri)
-                    </p>
-                </div>
-                <input class="input" name="tabs" type="radio" id="tab-4" />
-                <label class="label" for="tab-4">Teaching</label>
-                <div class="panel">
-                    <p> <h3>Teaching Experience </h3>
-                        Teaching Assistant, Shiv Nadar Institution of Eminence: Intermediate Microeconomics, Principles
-                        of
-                        Macroeconomics, Introductory Econometrics, Advanced Econometrics
-                    </p>
-                </div>
-            </div>
-        </div>
+<div class="navbar">
+   <a href="teaching.html">Teaching</a>
+  <!-- <a href="#research">Research</a> -->
+  <a href="research.html">Research</a>
+  <a href="cv.html">CV</a>
+  <a href="#home">Home</a>
+</div>
+
+  
+  <div class="header">
+    Kirti Tater
+  </div>
+
+
+<div class="content">
+  <h2>Welcome to my webpage!</h2>
+  <img src="KT-Img.jpg" alt="Kirti Tater" style="width: 30%;">
+  <p>I am a Doctoral Candidate in the Economics Department of Shiv Nadar Institution of Eminence.</p>
+  <p>My research interests include Economics of Gender, Labor Economics, Health Economics, and Development Economics.</p>
+  <p>You can reach me at <a href="mailto:kt473@snu.edu.in">kt473@snu.edu.in</a>.</p>
+</div>
 
 </body>
-
 </html>
