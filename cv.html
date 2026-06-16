@@ -1,72 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CV | Kirti Tater</title>
+
+  <style>
+    :root {
+      --primary: #475c66;
+      --primary-dark: #34474f;
+      --primary-light: #6f8994;
+      --text: #222;
+      --muted: #5f6b70;
+      --background: #f6f8f9;
+      --white: #ffffff;
+      --border: #dfe5e8;
+      --link: #1f5f8b;
+      --nav-hover: #f1f4f5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: linear-gradient(180deg, #f2f6f7 0%, #ffffff 55%);
+      min-height: 100vh;
     }
+
     .header {
-      background-color: rgba(71,92,102,1);
-      color: white;
-      padding: 20px;
+      background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--primary-light));
+      color: var(--white);
+      padding: 34px 20px 42px;
       text-align: center;
-      font-size: 24px;
     }
-    
+
+    .header h1 {
+      margin: 0;
+      font-size: 34px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
     .navbar {
-      overflow: hidden;
-      background-color: #f1f1f1;
+      background-color: var(--white);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
     }
+
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 6px;
+    }
+
     .navbar a {
-      float: right;
       display: block;
-      color: #333;
+      color: var(--text);
       text-align: center;
-      padding: 14px 20px;
+      padding: 15px 16px 13px;
       text-decoration: none;
-      font-size: 17px;
+      font-size: 16px;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s ease;
     }
-    .navbar a:hover {
-      background-color: #ddd;
-      color: black;
+
+    .navbar a:hover,
+    .navbar a:focus {
+      background-color: var(--nav-hover);
+      color: var(--primary);
     }
+
+    .navbar a.active {
+      color: var(--primary);
+      font-weight: 700;
+      border-bottom-color: var(--primary);
+    }
+
     .content {
-      padding: 20px;
-      margin-top: 40px; /* Added margin-top to create space between content and navbar */
+      max-width: 900px;
+      margin: 48px auto 64px;
+      padding: 0 20px;
     }
-    .profile-image {
-      display: block; /* Ensures the image is treated as a block element */
-      margin: 40px auto 20px; /* Centers the image horizontally and adds some margin below */
-      width: 40%; /* Adjust the width of the image as needed */
-  }
-  
+
+    /* Top bar: label on the left, button on the right */
+    .cv-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cv-topbar h2 {
+      margin: 0;
+      font-size: 26px;
+      color: var(--primary-dark);
+      font-weight: 700;
+    }
+
+    .cv-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+    }
+
+    .cv-button:hover,
+    .cv-button:focus {
+      background-color: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
+      text-decoration: none;
+    }
+
+    /* PDF embed wrapper */
+    .cv-embed-wrapper {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    .cv-embed-wrapper iframe {
+      display: block;
+      width: 100%;
+      height: 840px;
+      border: none;
+    }
+
+    /* Fallback message inside iframe area */
+    .cv-fallback {
+      display: none;
+      padding: 48px 32px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .cv-fallback a {
+      color: var(--link);
+      font-weight: 600;
+    }
+
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 30px;
+      }
+
+      .nav-inner {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .navbar a {
+        padding: 12px 10px;
+        font-size: 15px;
+      }
+
+      .content {
+        margin-top: 32px;
+      }
+
+      .cv-topbar h2 {
+        font-size: 22px;
+      }
+
+      .cv-embed-wrapper iframe {
+        height: 520px;
+      }
+    }
   </style>
-  </head>
-  <body>
+</head>
 
+<body>
 
-<div class="navbar">
-  <a href="teaching.html">Teaching</a>
-  <a href="research.html">Research</a>
-  <a href="cv.html">CV</a>
-  <a href="index.html">Home</a>
-</div>
+  <header class="header">
+    <h1>Kirti Tater</h1>
+  </header>
 
-<div class="header">
-  Kirti Tater
-</div>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html">Home</a>
+      <a href="cv.html" class="active">CV</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html">Teaching</a>
+    </div>
+  </nav>
 
-<div class="content">
-  <h2>Curriculum Vitae</h2>
-  <ul>
-    <li>
-        <p>Click <a href="https://drive.google.com/file/d/1KNCMJl8l9HxFAAowwf2TSodnjrvBxH3b/view?usp=drive_link" target="_blank">here</a> to download my CV.</p>
-    </li>
-  </ul>
-</div>
+  <main class="content">
 
+    <div class="cv-topbar">
+      <h2>Curriculum Vitae</h2>
+      <a
+        class="cv-button"
+        href="https://drive.google.com/file/d/1fm31cGpW1WIyDnnMOJh8wDn03TDe4iUP/view?usp=sharing"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <!-- simple external-link icon via SVG -->
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M2 2h4V1H1v12h12V8h-1v4H2V2Z" fill="currentColor"/>
+          <path d="M8 1v1h3.293L5.646 7.646l.708.708L12 2.707V6h1V1H8Z" fill="currentColor"/>
+        </svg>
+        Open full CV
+      </a>
+    </div>
 
+    <div class="cv-embed-wrapper">
+      <!--
+        Google Drive preview embed URL:
+        Replace /view?usp=sharing with /preview to get the embeddable version.
+        Google may block embedding if the file sharing settings don't allow it —
+        make sure "Anyone with the link" can view.
+      -->
+      <iframe
+        src="https://drive.google.com/file/d/1fm31cGpW1WIyDnnMOJh8wDn03TDe4iUP/preview"
+        allow="autoplay"
+        title="Kirti Tater – Curriculum Vitae"
+        loading="lazy"
+      ></iframe>
+
+      <!-- Shown only if JS detects the iframe failed to load -->
+      <noscript>
+        <div class="cv-fallback">
+          <p>Preview not available. <a href="https://drive.google.com/file/d/1fm31cGpW1WIyDnnMOJh8wDn03TDe4iUP/view?usp=sharing" target="_blank" rel="noopener noreferrer">Open the CV directly →</a></p>
+        </div>
+      </noscript>
+    </div>
+
+  </main>
+
+</body>
+</html>

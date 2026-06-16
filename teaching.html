@@ -1,71 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Teaching | Kirti Tater</title>
+
+  <style>
+    :root {
+      --primary: #475c66;
+      --text: #222;
+      --muted: #555;
+      --background: #fafafa;
+      --white: #ffffff;
+      --border: #e3e6e8;
+      --link: #1f5f8b;
+      --nav-hover: #f1f4f5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--background);
     }
+
     .header {
-      background-color: rgba(71,92,102,1);
-      color: white;
-      padding: 20px;
+      background-color: var(--primary);
+      color: var(--white);
+      padding: 34px 20px;
       text-align: center;
-      font-size: 24px;
     }
-    
+
+    .header h1 {
+      margin: 0;
+      font-size: 34px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
     .navbar {
-      overflow: hidden;
-      background-color: #f1f1f1;
+      background-color: var(--white);
+      border-bottom: 1px solid var(--border);
     }
+
+    .nav-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 4px;
+    }
+
     .navbar a {
-      float: right;
       display: block;
-      color: #333;
+      color: var(--text);
       text-align: center;
-      padding: 14px 20px;
+      padding: 14px 16px;
       text-decoration: none;
-      font-size: 17px;
+      font-size: 16px;
+      border-bottom: 3px solid transparent;
     }
-    .navbar a:hover {
-      background-color: #ddd;
-      color: black;
+
+    .navbar a:hover,
+    .navbar a:focus {
+      background-color: var(--nav-hover);
+      color: var(--primary);
     }
+
+    .navbar a.active {
+      color: var(--primary);
+      font-weight: 600;
+      border-bottom-color: var(--primary);
+    }
+
     .content {
-      padding: 20px;
-      margin-top: 40px; /* Added margin-top to create space between content and navbar */
+      max-width: 900px;
+      margin: 42px auto;
+      padding: 0 20px;
     }
-    .profile-image {
-      display: block; /* Ensures the image is treated as a block element */
-      margin: 40px auto 20px; /* Centers the image horizontally and adds some margin below */
-      width: 40%; /* Adjust the width of the image as needed */
-  }
-  
+
+    h2 {
+      margin: 0 0 28px;
+      font-size: 28px;
+      color: var(--primary);
+    }
+
+    h3 {
+      margin-top: 34px;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      font-size: 20px;
+      color: var(--text);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .teaching-entry {
+      background-color: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px 22px;
+      margin-bottom: 20px;
+    }
+
+    .role {
+      font-weight: 600;
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    .institution {
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .course-list {
+      margin: 0;
+      padding-left: 22px;
+    }
+
+    .course-list li {
+      margin-bottom: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .header h1 {
+        font-size: 28px;
+      }
+
+      .nav-inner {
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .navbar a {
+        padding: 12px 10px;
+        font-size: 15px;
+      }
+
+      .content {
+        margin-top: 32px;
+      }
+    }
   </style>
-  </head>
-  <body>
+</head>
 
+<body>
 
-<div class="navbar">
-  <a href="teaching.html">Teaching</a>
-  <a href="research.html">Research</a>
-  <a href="cv.html">CV</a>
-  <a href="index.html">Home</a>
-</div>
+  <header class="header">
+    <h1>Kirti Tater</h1>
+  </header>
 
-<div class="header">
-    Kirti Tater
-  </div>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html">Home</a>
+      <a href="cv.html">CV</a>
+      <a href="research.html">Research</a>
+      <a href="teaching.html" class="active">Teaching</a>
+    </div>
+  </nav>
 
-<div class="content">
-  <h2>Teaching</h2>
-  <h3>Teaching Experience</h3>
-  <ul>
-    <li>
-        Teaching Assistant, Shiv Nadar Institution of Eminence: Intermediate Microeconomics, Principles of Macroeconomics, Introductory Econometrics, Advanced Econometrics        
-    </li>
-  </ul>
-</div>
+  <main class="content">
+    <h2>Teaching</h2>
+
+    <section>
+      <h3>Teaching Experience</h3>
+
+      <div class="teaching-entry">
+        <div class="role">Teaching Assistant</div>
+        <div class="institution">Shiv Nadar Institution of Eminence</div>
+
+        <ul class="course-list">
+          <li>Intermediate Microeconomics</li>
+          <li>Principles of Macroeconomics</li>
+          <li>Introductory Econometrics</li>
+          <li>Advanced Econometrics</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
